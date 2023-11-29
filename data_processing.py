@@ -100,3 +100,23 @@ class Table:
     def __str__(self):
         return self.table_name + ':' + str(self.table)
 
+    def insert_row(self, dict, entry):
+        '''
+        This method inserts a dictionary, dict, into a Table object, effectively adding a row to the Table.
+        '''
+
+        if isinstance(entry, dict):
+            self.table.append(entry)
+
+
+    def update_row(self, primary_attribute, primary_attribute_value, update_attribute, update_value):
+        '''
+        This method updates the current value of update_attribute to update_value
+        For example, my_table.update_row('Film', 'A Serious Man', 'Year', '2022') will change the 'Year' attribute for the 'Film'
+        'A Serious Man' from 2009 to 2022
+        '''
+
+
+
+
+
