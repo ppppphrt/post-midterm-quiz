@@ -105,12 +105,12 @@ class Table:
         This method inserts a dictionary, dict, into a Table object, effectively adding a row to the Table.
         '''
 
-        # if isinstance(dict):
-        #     self.table.append(dict)
-
-        with open('movies.csv' , 'w') as f:
-            write = csv.DictWriter(f)
-            write.writerow(dict)
+        if isinstance(dict):
+            self.table.append(dict)
+        #
+        # with open('movies.csv' , 'w') as f:
+        #     write = csv.DictWriter(f)
+        #     write.writerow(dict)
 
 
 
@@ -135,8 +135,11 @@ dict['Worldwide Gross'] = '195.3'
 dict['Year'] = '2017'
 
 test = Table
-test.insert_row(dict)
-
+# test.insert_row(dict)
+my_DB = DB()
+my_table_1 = my_DB.search('Genre')
+my_table1_filtered = test.filter(lambda x: x['Genre'] == 'Fantasy')
+print(my_table1_filtered)
 
 
 
